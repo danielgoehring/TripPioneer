@@ -1,12 +1,12 @@
-import { useState } from "react";
+
 
 function SearchBar() {
-  const [count, setCount] = useState(0);
+  
 
   return (
     <>
-      <div className="px-96">
-        <div className="border shadow-lg py-2 pl-8 pr-2 rounded-full mt-10">
+      <div className="px-64">
+        <div className="border shadow-lg py-2 pl-8 pr-2 rounded-full mt-10 ">
           <div className="flex">
             <div>
               <label>Destination</label>

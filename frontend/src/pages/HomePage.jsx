@@ -1,17 +1,18 @@
-import { useState } from "react";
+
 
 function HomePage() {
-  const [count, setCount] = useState(0);
+
 
   return (
     <>
-      <div className="mt-20 flex justify-center">
+    <div className="border border-slate-100 mt-6"></div>
+      <div className="mt-12 flex justify-center">
         <div className="mx-10">
           <div className="ml-7">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
+              width="24"
+              height="24"
               fill="currentColor"
               class="bi bi-house-door text-slate-500"
               viewBox="0 0 16 16"
@@ -26,8 +27,8 @@ function HomePage() {
           <div className="ml-10">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
+              width="24"
+              height="24"
               fill="currentColor"
               class="bi bi-house-door text-slate-500"
               viewBox="0 0 16 16"
@@ -41,8 +42,8 @@ function HomePage() {
           <div className="ml-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
+              width="24"
+              height="24"
               fill="currentColor"
               class="bi bi-house-door text-slate-500"
               viewBox="0 0 16 16"
@@ -57,8 +58,8 @@ function HomePage() {
           <div className="ml-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
+              width="24"
+              height="24"
               fill="currentColor"
               class="bi bi-house-door text-slate-500"
               viewBox="0 0 16 16"
