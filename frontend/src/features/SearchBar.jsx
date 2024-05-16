@@ -10,24 +10,28 @@ function SearchBar() {
           <div className="flex">
             <div>
               <label>Destination</label>
-              <input placeholder="Find destinations" />
+              <input placeholder="Find destinations"
+              className="placeholder:text-sm" />
             </div>
             <div className="border-l border-l-2 border-l-gray-100 ">
               <div className="ml-4">
                 <label>Check in time</label>
-                <input placeholder="Add check in dates" />
+                <input placeholder="Add check in dates"
+                className="placeholder:text-sm" />
               </div>
             </div>
             <div className="border-l border-l-2 border-l-gray-100">
               <div className="ml-4">
                 <label>Check out time</label>
-                <input placeholder="Add check out dates" />
+                <input placeholder="Add check out dates"
+                className="placeholder:text-sm" />
               </div>
             </div>
             <div className="border-l border-l-2 border-l-gray-100">
               <div className="ml-4">
                 <label>Guests</label>
-                <input placeholder="Add guests" />
+                <input placeholder="Add guests"
+                className="placeholder:text-sm" />
               </div>
             </div>
 

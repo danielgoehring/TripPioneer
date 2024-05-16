@@ -3,7 +3,7 @@ import Logo from "../assets/TripPioneer_logo.png";
 import "../index.css";
 
 function Header() {
-  const [count, setCount] = useState(0);
+  
 
   return (
     <>
