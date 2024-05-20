@@ -1,37 +1,41 @@
-
-
 function SearchBar() {
-  
-
   return (
     <>
-      <div className="px-64">
+      <div className="px-40">
         <div className="border shadow-lg py-2 pl-8 pr-2 rounded-full mt-10 ">
           <div className="flex">
-            <div>
+            <div className="text-left">
               <label>Destination</label>
-              <input placeholder="Find destinations"
-              className="placeholder:text-sm" />
+              <input
+                placeholder="Find destinations"
+                className="placeholder:text-sm"
+              />
             </div>
             <div className="border-l border-l-2 border-l-gray-100 ">
-              <div className="ml-4">
+              <div className="text-left ml-4">
                 <label>Check in time</label>
-                <input placeholder="Add check in dates"
-                className="placeholder:text-sm" />
+                <input
+                  placeholder="Add check in dates"
+                  className="placeholder:text-sm"
+                />
               </div>
             </div>
             <div className="border-l border-l-2 border-l-gray-100">
-              <div className="ml-4">
+              <div className="text-left ml-4">
                 <label>Check out time</label>
-                <input placeholder="Add check out dates"
-                className="placeholder:text-sm" />
+                <input
+                  placeholder="Add check out dates"
+                  className="placeholder:text-sm"
+                />
               </div>
             </div>
             <div className="border-l border-l-2 border-l-gray-100">
-              <div className="ml-4">
+              <div className="text-left ml-4">
                 <label>Guests</label>
-                <input placeholder="Add guests"
-                className="placeholder:text-sm" />
+                <input
+                  placeholder="Add guests"
+                  className="placeholder:text-sm"
+                />
               </div>
             </div>
 
