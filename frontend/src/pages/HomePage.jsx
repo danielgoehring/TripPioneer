@@ -175,56 +175,83 @@ function HomePage() {
       <div className="border border-slate-100 mt-6"></div>
 
       <div className="mt-7 flex justify-center items center">
-        <div className="mx-6">
+        <div className="mx-6 border-b-2 border-transparent hover:border-slate-400 transition duration-300">
           <div className="ml-5">
-            <img className="beach-icon" src={beachicon} alt="beach" />
+            <img
+              className="beach-icon cursor-pointer  "
+              src={beachicon}
+              alt="beach"
+            />
           </div>
 
-          <div className="text-slate-500 text-sm">Beach house</div>
-        </div>
-        <div className="mx-6 mt-1.5">
-          <div className="ml-8">
-            <img className="mountain-icon" src={mountainicon} alt="mountain" />
+          <div className="text-slate-500 text-sm cursor-pointer">
+            Beach house
           </div>
-          <div className="text-slate-500 text-sm mountain-house">
+        </div>
+        <div className="mx-6 mt-1.5 border-b-2 border-transparent hover:border-slate-400 transition duration-300">
+          <div className="ml-8">
+            <img
+              className="mountain-icon cursor-pointer"
+              src={mountainicon}
+              alt="mountain"
+            />
+          </div>
+          <div className="text-slate-500 text-sm mountain-house cursor-pointer">
             Mountain house
           </div>
         </div>
-        <div className="mx-6 mt-2 ">
+        <div className="mx-6 mt-2 border-b-2 border-transparent hover:border-slate-400 transition duration-300">
           <div className="ml-4">
             <img
-              className="lakehouse-icon"
+              className="lakehouse-icon cursor-pointer"
               src={lakehouseicon}
               alt="lakehouse"
             />
           </div>
 
-          <div className="text-slate-500 text-sm">Lake house</div>
+          <div className="text-slate-500 text-sm cursor-pointer">
+            Lake house
+          </div>
         </div>
-        <div className="mx-6 mt-1">
+        <div className="mx-6 mt-1 border-b-2 border-transparent hover:border-slate-400 transition duration-300">
           <div className="ml-4">
-            <img className="camping-icon" src={campingicon} alt="camping" />
+            <img
+              className="camping-icon cursor-pointer"
+              src={campingicon}
+              alt="camping"
+            />
           </div>
 
-          <div className="text-slate-500 text-sm">Camp sites</div>
+          <div className="text-slate-500 text-sm cursor-pointer">
+            Camp sites
+          </div>
         </div>
       </div>
       <div>
         <div className="container mx-auto p-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {photos.map((photo) => {
-              console.log("Rendering photo:", photo); // Debugging: Check each photo object
+              console.log("Rendering photo:", photo);
               return (
-                <div key={photo.id} className="relative w-full h-80 mb-28">
+                <div
+                  key={photo.id}
+                  className="relative w-full h-80 mb-28 cursor-pointer"
+                >
                   <img
                     src={photo.src}
                     alt={photo.alt}
                     className="w-full h-full object-cover rounded-lg shadow-md"
                   />
-                  <div className="font-semibold mt-2">{photo.description}</div>
-                  <div className="text-slate-500 text-sm">{photo.distance}</div>
-                  <div className="text-slate-500 text-sm">{photo.dates}</div>
-                  <div className="font-semibold">${photo.price} night</div>
+                  <div className="text-left">
+                    <div className="font-semibold mt-2">
+                      {photo.description}
+                    </div>
+                    <div className="text-slate-500 text-sm">
+                      {photo.distance}
+                    </div>
+                    <div className="text-slate-500 text-sm">{photo.dates}</div>
+                    <div className="font-semibold">${photo.price} night</div>
+                  </div>
                 </div>
               );
             })}

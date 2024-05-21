@@ -2,9 +2,9 @@ function SearchBar() {
   return (
     <>
       <div className="px-40">
-        <div className="border shadow-lg py-2 pl-8 pr-2 rounded-full mt-10 ">
+        <div className="border shadow-lg py-2 pl-8 pr-2 rounded-full mt-10">
           <div className="flex">
-            <div className="text-left">
+            <div className="text-left ">
               <label>Destination</label>
               <input
                 placeholder="Find destinations"
