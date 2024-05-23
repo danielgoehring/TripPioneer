@@ -1,8 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .logo {
@@ -87,4 +86,8 @@
 .listing-img5 {
   height: 291.6px;
   border-bottom-right-radius: 10px;
+}
+
+.marginr {
+  margin: 20px;
 }

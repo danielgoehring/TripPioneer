@@ -23,7 +23,7 @@ function Listing() {
   const firstImage = images[0];
   return (
     <>
-      <div className="border border-slate-100 mt-6"></div>
+      <div className="border border-slate-100 mx-4 mt-6"></div>
       <div className="flex justify-between px-4 mt-6">
         <div className="text-3xl font-semibold">Lake Rock Mountain Home</div>
         <div className="flex">
@@ -97,6 +97,127 @@ function Listing() {
             alt="5"
             className="w-full h-full object-cover listing-img5"
           />
+        </div>
+      </div>
+      <div>
+        <div className="px-4">
+          <div className="text-2xl font-semibold text-left">
+            Entire house in Athens, Georgia
+          </div>
+          <div className="flex items-center">
+            <div>4 guests</div>
+            <div className="pb-2 mx-1">.</div>
+            <div>4 bedrooms</div>
+            <div className="pb-2 mx-1">.</div>
+            <div>8 beds</div>
+            <div className="pb-2 mx-1">.</div>
+            <div>4 baths</div>
+          </div>
+          <div className="flex items-center">
+            <div className="mr-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+              </svg>
+            </div>
+            <div className="font-semibold">3.78</div>
+            <div className="pb-2 mx-1">.</div>
+            <div className="font-semibold underline">124 reviews</div>
+          </div>
+        </div>
+        <div className="border border-slate-100 mx-4 mt-6"></div>
+
+        <div className="flex items-center my-4 ml-3">
+          <div className=" overflow-hidden rounded-full">
+            <img
+              className="object-cover w-10 h-10 mr-7"
+              src={beachicon}
+              alt="beach"
+            />
+          </div>
+          <div>
+            <div className="font-semibold">Hosted by Daniel</div>
+            <div className="flex items-center">
+              <div className="text-gray-500">Superhost</div>
+              <div className="pb-2 mx-1">.</div>
+              <div className="text-gray-500">6 years hosting</div>
+            </div>
+          </div>
+        </div>
+        <div className="border border-slate-100 mx-4 mt-6"></div>
+        <div className="flex items-center my-4 marginr">
+          <div className="ml-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              class="bi bi-door-closed mr-8"
+              viewBox="0 0 16 16"
+            >
+              <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3zm1 13h8V2H4z" />
+              <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0" />
+            </svg>
+          </div>
+          <div>
+            <div className="font-semibold">Self check-in</div>
+            <div className="flex items-center">
+              <div className="text-gray-500">
+                Check yourself in with the keypad
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-center my-4 marginr">
+          <div className="ml-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="currentColor"
+              class="bi bi-wallet mr-8"
+              viewBox="0 0 16 16"
+            >
+              <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a2 2 0 0 1-1-.268M1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1" />
+            </svg>
+          </div>
+          <div>
+            <div className="font-semibold">Daniel is a Superhost.</div>
+            <div className="flex items-center">
+              <div className="text-gray-500">
+                Superhosts are experienced, highly rated Hosts.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex items-center my-4 marginr">
+          <div className="ml-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="currentColor"
+              class="bi bi-calendar4 mr-8"
+              viewBox="0 0 16 16"
+            >
+              <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+            </svg>
+          </div>
+          <div>
+            <div className="font-semibold">Free cancellation before Jul 4</div>
+            <div className="flex items-center">
+              <div className="text-gray-500">
+                Get a full refund if you change your mind
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
