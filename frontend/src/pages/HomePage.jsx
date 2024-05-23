@@ -4,24 +4,23 @@ import beachicon from "../assets/beachicon.png";
 import mountainicon from "../assets/mountainicon.png";
 import lakehouseicon from "../assets/lakehouseicon.png";
 import campingicon from "../assets/campingicon.png";
-
+import { fetchImages } from "../services/api";
 import "../App.css";
 
 function HomePage() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    const fetchImages = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/images");
-        console.log(response.data); // Debugging line
-        setImages(response.data);
+        const data = await fetchImages();
+        setImages(data);
       } catch (error) {
         console.error("Error fetching images:", error);
       }
     };
 
-    fetchImages();
+    fetchData();
   }, []);
 
   return (

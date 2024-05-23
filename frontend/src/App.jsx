@@ -1,18 +1,26 @@
-
-
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import SearchBar from "./features/SearchBar";
 import HomePage from "./pages/HomePage";
+import Listing from "./pages/Listing";
 function App() {
-  
-
   return (
-    <>
-      <Header />
-      <SearchBar />
-      <HomePage />
-    </>
+    <Router>
+      <div>
+        <Header />
+        <SearchBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/Listing" element={<Listing />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
+{
+  /* <Route path="/listing/:id" element={<Listing />} />; */
+}

@@ -3,12 +3,10 @@ import Logo from "../assets/TripPioneer_logo.png";
 import "../index.css";
 
 function Header() {
-  
-
   return (
     <>
       <div className="pt-8 pb-6">
-        <div className="px-20">
+        <div className="px-4">
           <div className="flex justify-between items-center">
             <div>
               <img src={Logo} alt="logo" />

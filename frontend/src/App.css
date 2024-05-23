@@ -64,3 +64,27 @@
   width: 36px;
   height: 36px;
 }
+
+.listing-img1 {
+  height: 600px;
+  border-top-left-radius: 10px; /* Adjust the value as needed */
+  border-bottom-left-radius: 10px; /* Adjust the value as needed */
+}
+
+.listing-img2 {
+  height: 300px;
+}
+
+.listing-img3 {
+  height: 300px;
+  border-top-right-radius: 10px;
+}
+
+.listing-img4 {
+  height: 291.6px;
+}
+
+.listing-img5 {
+  height: 291.6px;
+  border-bottom-right-radius: 10px;
+}
