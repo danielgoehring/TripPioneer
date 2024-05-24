@@ -91,3 +91,15 @@
 .marginr {
   margin: 20px;
 }
+
+.sm-text {
+  font-size: 15px;
+}
+
+.margin-bt {
+  margin-bottom: -4px;
+}
+
+.m-left {
+  margin-left: 318px;
+}

@@ -133,7 +133,7 @@ function Listing() {
         </div>
         <div className="border border-slate-100 mx-4 mt-6"></div>
 
-        <div className="flex items-center my-4 ml-3">
+        <div className="flex items-center my-2 ml-3">
           <div className=" overflow-hidden rounded-full">
             <img
               className="object-cover w-10 h-10 mr-7"
@@ -141,16 +141,16 @@ function Listing() {
               alt="beach"
             />
           </div>
-          <div>
-            <div className="font-semibold">Hosted by Daniel</div>
+          <div className="mt-2">
+            <div className="font-semibold margin-bt">Hosted by Daniel</div>
             <div className="flex items-center">
-              <div className="text-gray-500">Superhost</div>
+              <div className="text-gray-500 sm-text">Superhost</div>
               <div className="pb-2 mx-1">.</div>
-              <div className="text-gray-500">6 years hosting</div>
+              <div className="text-gray-500 sm-text">6 years hosting</div>
             </div>
           </div>
         </div>
-        <div className="border border-slate-100 mx-4 mt-6"></div>
+        <div className="border border-slate-100 mx-4 mt-3.5"></div>
         <div className="flex items-center my-4 marginr">
           <div className="ml-1">
             <svg
@@ -168,7 +168,7 @@ function Listing() {
           <div>
             <div className="font-semibold">Self check-in</div>
             <div className="flex items-center">
-              <div className="text-gray-500">
+              <div className="text-gray-500 sm-text">
                 Check yourself in with the keypad
               </div>
             </div>
@@ -182,16 +182,16 @@ function Listing() {
               width="22"
               height="22"
               fill="currentColor"
-              class="bi bi-wallet mr-8"
-              viewBox="0 0 16 16"
+              class="bi bi-columns mr-8"
+              viewBox="0 0 16 16 "
             >
-              <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a2 2 0 0 1-1-.268M1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1" />
+              <path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm8.5 0v8H15V2zm0 9v3H15v-3zm-1-9H1v3h6.5zM1 14h6.5V6H1z" />
             </svg>
           </div>
           <div>
             <div className="font-semibold">Daniel is a Superhost.</div>
             <div className="flex items-center">
-              <div className="text-gray-500">
+              <div className="text-gray-500 sm-text">
                 Superhosts are experienced, highly rated Hosts.
               </div>
             </div>
@@ -213,9 +213,92 @@ function Listing() {
           <div>
             <div className="font-semibold">Free cancellation before Jul 4</div>
             <div className="flex items-center">
-              <div className="text-gray-500">
+              <div className="text-gray-500 sm-text">
                 Get a full refund if you change your mind
               </div>
+            </div>
+          </div>
+          <div className="border border-slate-100 mx-4 mt-6"></div>
+        </div>
+        <div className="border border-slate-100 mx-4 mt-6"></div>
+        <div className="flex">
+          <div className="w-1/2 p-4 pr-4">
+            <p>
+              Situated on the peaceful shores of Lake Athens in Georgia, this
+              delightful lake house serves as a perfect escape for nature lovers
+              and outdoor enthusiasts alike. Recently upgraded to combine
+              contemporary comforts with rustic appeal, the property offers
+              stunning views of the tranquil lake and its verdant surroundings.
+              Guests can enjoy a range of activities, such as fishing, early
+              morning paddleboarding, or a relaxing swim in the pristine waters
+              of this scenic lake. The property features a generous 1,500 sq
+              foot dock outfitted with 2 paddleboards, a pedal boat, a full-size
+              rowboat, optional jet ski rental, and a stone firepit ideal for
+              evening get-togethers and stargazing.
+            </p>
+          </div>
+        </div>
+        <div className="pl-4 font-semibold underline mb-12">Show more</div>
+        <div className="border border-slate-100 mx-4 mt-6 mb-12"></div>
+        <div className="pl-4">
+          <div className="flex">
+            <div className="text-2xl font-semibold">Where you'll sleep</div>
+            <div className="flex m-left items-center">
+              <div>1/2</div>
+              <div className="flex">
+                <div className="mx-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    fill="currentColor"
+                    class="bi bi-arrow-left-circle"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    fill="currentColor"
+                    class="bi bi-arrow-right-circle"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-start w-1/2 mt-6">
+            <div className="w-1/2 pr-2">
+              <img
+                src={firstImage.url}
+                alt="Stairs"
+                className="w-full h-52 object-cover rounded-lg"
+              />
+              <div className="font-semibold mt-4">Bedroom 1</div>
+              <div>4 double beds</div>
+            </div>
+
+            <div className="w-1/2 pl-2">
+              <img
+                src={firstImage.url}
+                alt="Bedroom"
+                className="w-full h-52 object-cover rounded-lg"
+              />
+              <div className="font-semibold mt-4">Bedroom 2</div>
+              <div>1 queen bed</div>
             </div>
           </div>
         </div>
