@@ -478,7 +478,7 @@ function Listing() {
 
           {/* ////// reserve dates card */}
           {/* Right Section - Reserve Card */}
-          <div className=" p-4">
+          <div className="pt-4 pl-20">
             <div className="border p-4 shadow-lg rounded-lg reserve-container">
               <div className="text-2xl font-semibold mb-6">
                 $495 <span className="text-sm font-normal">night</span>
