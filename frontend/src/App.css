@@ -119,3 +119,29 @@
 .m-left5 {
   margin-left: 318px;
 }
+
+.m-b1 {
+  margin-bottom: 24px;
+}
+
+.m-b2 {
+  margin-bottom: 26px;
+}
+.m-b3 {
+  margin-bottom: 22px;
+}
+.m-b4 {
+  margin-bottom: 28px;
+}
+.m-b5 {
+  margin-bottom: 27px;
+}
+.m-b6 {
+  margin-bottom: 24px;
+}
+
+.reserve-container {
+  width: 380px;
+  height: 500px;
+  padding: 26px;
+}
