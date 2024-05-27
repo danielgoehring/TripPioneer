@@ -226,7 +226,7 @@ function Listing() {
             </div>
             <div className="border border-slate-100 mx-4 mt-6"></div>
             <div className="flex">
-              <div className="w-1/2 p-4 pr-4">
+              <div className="w-3/4 p-4 pr-4">
                 <p>
                   Situated on the peaceful shores of Lake Athens in Georgia,
                   this delightful lake house serves as a perfect escape for
@@ -511,7 +511,7 @@ function Listing() {
                 </div>
               </div>
               <div className="mt-4">
-                <button className="bg-green-500 text-white py-2.5 px-4 rounded w-full font-bold mb-2">
+                <button className="bg-emerald-500 text-white py-2.5 px-4 rounded w-full font-bold mb-2">
                   Reserve
                 </button>
               </div>
@@ -968,6 +968,7 @@ function Listing() {
             Additionally, the area boasts excellent public transportation links,
             allowing guests to explore the city's attractions with ease...
           </div>
+          <div className="font-semibold underline mt-4">Show more</div>
         </div>
         <div className="pl-4 mt-12 mb-6">
           <div className="text-2xl font-semibold mb-6">Meet your Host</div>
@@ -975,7 +976,7 @@ function Listing() {
             <div className="flex">
               <div className="">
                 <div className="bg-white flex items-center rounded-3xl">
-                  <div className="mx-10 flex flex-col items-center ml-20">
+                  <div className="mx-10 mr-20 flex flex-col items-center ml-20">
                     <div className="overflow-hidden rounded-full">
                       <img
                         className="object-cover w-24 h-24"
@@ -1001,15 +1002,29 @@ function Listing() {
                     </div>
                   </div>
                   <div className="my-6">
-                    <div className="text-xl font-bold">186</div>
+                    <div className="text-2xl font-bold">186</div>
                     <div className="text-sm">reviews</div>
                     <div className="border border-slate-100  my-2"></div>
+                    <div className="flex items-center">
+                      <div className="text-2xl font-bold">4.8</div>
+                      <div className="mr-1 ml-1 mt-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="13"
+                          fill="currentColor"
+                          class="bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                        </svg>
+                      </div>
+                    </div>
 
-                    <div className="text-xl font-bold">4.8 *</div>
                     <div className="text-sm">rating</div>
                     <div className="border border-slate-100  mt-6 my-2"></div>
 
-                    <div className="text-xl font-bold">5</div>
+                    <div className="text-2xl font-bold">5</div>
                     <div className="text-sm">Years hosting</div>
                   </div>
                 </div>
@@ -1026,7 +1041,7 @@ function Listing() {
                       <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1" />
                     </svg>
                   </div>
-                  <div m>Born in the 90's</div>
+                  <div>Born in the 90's</div>
                 </div>
                 <div className="flex">
                   <div>
@@ -1048,14 +1063,14 @@ function Listing() {
               </div>
 
               <div className="ml-20">
-                <div className="text-xl font-semibold mb-4">
+                <div className="text-xl font-semibold mb-2">
                   Daniel is a Superhost
                 </div>
                 <div>
                   Superhosts are experienced, highly rated hosts who are
                   commited to providing great stay for guests
                 </div>
-                <div className="text-xl font-semibold mb-4 mt-8">
+                <div className="text-xl font-semibold mb-2 mt-8">
                   Host details
                 </div>
                 <div>Response rate: 85%</div>
@@ -1071,7 +1086,7 @@ function Listing() {
           Things to know
         </div>
 
-        <div className="pl-4 flex justify-between">
+        <div className="pl-4 flex justify-between pb-8">
           <div>
             <div className="font-semibold mb-2">House rules</div>
             <div className="mb-2">Check in after 4:00 PM</div>
