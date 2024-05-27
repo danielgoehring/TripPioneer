@@ -142,6 +142,34 @@
 
 .reserve-container {
   width: 380px;
-  height: 500px;
+  height: 530px;
   padding: 26px;
+}
+
+.central-margin {
+  margin-left: 17.5px;
+}
+
+.parking-margin {
+  margin-left: -8px;
+}
+
+.tv-margin {
+  margin-left: -8px;
+}
+
+.dryer-margin {
+  margin-left: -7px;
+}
+
+.parking2-margin {
+  margin-left: 22px;
+}
+
+.lake-margin {
+  margin-left: 15px;
+}
+
+.kitchen-margin {
+  margin-left: 19px;
 }
