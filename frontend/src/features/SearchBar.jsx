@@ -1,40 +1,40 @@
 function SearchBar() {
   return (
     <>
-      <div className="px-40">
+      <div className="flex justify-center">
         <div className="border shadow-lg py-2 pl-8 pr-2 rounded-full mt-10">
-          <div className="flex">
-            <div className="text-left ">
-              <label>Destination</label>
+          <div className="flex-grow flex items-center">
+            <div className="text-left px-4">
+              <label className="block text-xs font-semibold">Destination</label>
               <input
                 placeholder="Find destinations"
-                className="placeholder:text-sm"
+                className="placeholder:text-sm w-full"
               />
             </div>
-            <div className="border-l border-l-2 border-l-gray-100 ">
-              <div className="text-left ml-4">
-                <label>Check in time</label>
+            <div className="border-l border-l-2 border-l-gray-100 px-4 flex items-center">
+              <div className="text-left">
+                <label className="block text-xs font-semibold">Check in time</label>
                 <input
                   placeholder="Add check in dates"
-                  className="placeholder:text-sm"
+                  className="placeholder:text-sm w-full"
                 />
               </div>
             </div>
-            <div className="border-l border-l-2 border-l-gray-100">
-              <div className="text-left ml-4">
-                <label>Check out time</label>
+            <div className="border-l border-gray-200 px-4 flex items-center">
+              <div className="text-left">
+                <label className="block text-xs font-semibold">Check out time</label>
                 <input
                   placeholder="Add check out dates"
-                  className="placeholder:text-sm"
+                  className="placeholder:text-sm w-full"
                 />
               </div>
             </div>
-            <div className="border-l border-l-2 border-l-gray-100">
-              <div className="text-left ml-4">
-                <label>Guests</label>
+            <div className="border-l border-gray-200 px-4 flex items-center">
+              <div className="text-left">
+                <label className="block text-xs font-semibold">Guests</label>
                 <input
                   placeholder="Add guests"
-                  className="placeholder:text-sm"
+                  className="placeholder:text-sm w-full"
                 />
               </div>
             </div>
