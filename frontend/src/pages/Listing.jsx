@@ -20,13 +20,15 @@ function Listing() {
     fetchData();
   }, []);
 
-  const firstImage = images[0];
+  const houseListings = images[0];
   return (
     <>
       <div className="border border-slate-100 mx-4 mt-6"></div>
       <div className="px-44">
         <div className="flex justify-between px-4 mt-6">
-          <div className="text-3xl font-semibold">Lake Rock Mountain Home</div>
+          <div className="text-3xl font-semibold">
+            {houseListings.listingTitle}
+          </div>
           <div className="flex">
             <div className="flex items-center">
               <div>
@@ -70,31 +72,31 @@ function Listing() {
         <div className="grid grid-cols-4 grid-rows-2 gap-2 p-4 pt-6">
           <div className="col-span-2 row-span-2 ">
             <img
-              src={firstImage.url}
+              src={houseListings.url}
               alt="1"
               className="w-full h-full object-cover listing-img1"
             />
           </div>
           <div className="col-span-2 row-span-1 grid grid-cols-2 gap-2">
             <img
-              src={firstImage.url}
+              src={houseListings.url}
               alt="2"
               className="w-full h-full object-cover listing-img2"
             />
             <img
-              src={firstImage.url}
+              src={houseListings.url}
               alt="3"
               className="w-full h-full object-cover listing-img3"
             />
           </div>
           <div className="col-span-2 row-span-1 grid grid-cols-2 gap-2">
             <img
-              src={firstImage.url}
+              src={houseListings.url}
               alt="4"
               className="w-full h-full object-cover listing-img4"
             />
             <img
-              src={firstImage.url}
+              src={houseListings.url}
               alt="5"
               className="w-full h-full object-cover listing-img5"
             />
@@ -103,8 +105,10 @@ function Listing() {
         <div className="flex">
           <div>
             <div className="px-4">
+              {/* Listing description //////////////// */}
               <div className="text-2xl font-semibold text-left">
-                Entire house in Athens, Georgia
+                {/* Entire house in Athens, Georgia */}
+                {houseListings.listingTitleDes}
               </div>
               <div className="flex items-center">
                 <div>4 guests</div>
@@ -128,7 +132,9 @@ function Listing() {
                     <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                   </svg>
                 </div>
-                <div className="font-semibold">3.78</div>
+                <div className="font-semibold">
+                  {houseListings.listingRating}
+                </div>
                 <div className="pb-2 mx-1">.</div>
                 <div className="font-semibold underline">124 reviews</div>
               </div>
@@ -144,11 +150,15 @@ function Listing() {
                 />
               </div>
               <div className="mt-2">
-                <div className="font-semibold margin-bt">Hosted by Daniel</div>
+                <div className="font-semibold margin-bt">
+                  Hosted by {houseListings.host}
+                </div>
                 <div className="flex items-center">
                   <div className="text-gray-500 sm-text">Superhost</div>
                   <div className="pb-2 mx-1">.</div>
-                  <div className="text-gray-500 sm-text">6 years hosting</div>
+                  <div className="text-gray-500 sm-text">
+                    {houseListings.hostingTime} years hosting
+                  </div>
                 </div>
               </div>
             </div>
@@ -227,24 +237,13 @@ function Listing() {
             <div className="border border-slate-100 mx-4 mt-6"></div>
             <div className="flex">
               <div className="w-3/4 p-4 pr-4">
-                <p>
-                  Situated on the peaceful shores of Lake Athens in Georgia,
-                  this delightful lake house serves as a perfect escape for
-                  nature lovers and outdoor enthusiasts alike. Recently upgraded
-                  to combine contemporary comforts with rustic appeal, the
-                  property offers stunning views of the tranquil lake and its
-                  verdant surroundings. Guests can enjoy a range of activities,
-                  such as fishing, early morning paddleboarding, or a relaxing
-                  swim in the pristine waters of this scenic lake. The property
-                  features a generous 1,500 sq foot dock outfitted with 2
-                  paddleboards, a pedal boat, a full-size rowboat, optional jet
-                  ski rental, and a stone firepit ideal for evening
-                  get-togethers and stargazing.
-                </p>
+                <p>{houseListings.listingDes}</p>
               </div>
             </div>
             <div className="pl-4 font-semibold underline mb-12">Show more</div>
             <div className="border border-slate-100 mx-4 mt-6 mb-12"></div>
+
+            {/* secondary images ///////////// */}
             <div className="pl-4">
               <div className="flex">
                 <div className="text-2xl font-semibold">Where you'll sleep</div>
@@ -288,7 +287,7 @@ function Listing() {
               <div className="flex justify-start w-1/2 mt-6">
                 <div className="w-1/2 pr-2">
                   <img
-                    src={firstImage.url}
+                    src={houseListings.url}
                     alt="Stairs"
                     className="w-full h-52 object-cover rounded-lg"
                   />
@@ -298,7 +297,7 @@ function Listing() {
 
                 <div className="w-1/2 pl-2">
                   <img
-                    src={firstImage.url}
+                    src={houseListings.url}
                     alt="Bedroom"
                     className="w-full h-52 object-cover rounded-lg"
                   />
@@ -483,7 +482,8 @@ function Listing() {
           <div className="p-4 pl-20 sticky top-4">
             <div className="border p-4 shadow-lg rounded-lg reserve-container">
               <div className="text-2xl font-semibold mb-6">
-                $495 <span className="text-sm font-normal">night</span>
+                ${houseListings.listingPrice}{" "}
+                <span className="text-sm font-normal">night</span>
               </div>
               <div className="border rounded-lg ">
                 <div className="flex justify-between ">
@@ -665,6 +665,9 @@ function Listing() {
           </div>
         </div>
         <div className="border border-slate-100 mx-4 mt-6 mb-12"></div>
+
+        {/* REVIEWS //////////////// */}
+
         <div className="grid grid-cols-2 gap-4">
           {/* Review 1 */}
           <div className="review1 p-4 ">
@@ -955,6 +958,7 @@ function Listing() {
 
         <div className="border border-slate-100 mx-4 mt-6 mb-12"></div>
 
+        {/* Neighborhood highlights  */}
         <div className="pl-4">
           <div className="text-2xl font-semibold mb-4">
             Neighborhood highlights
@@ -970,9 +974,10 @@ function Listing() {
           </div>
           <div className="font-semibold underline mt-4">Show more</div>
 
-        <div className="border border-slate-10 mt-6 mb-12"></div>
-
+          <div className="border border-slate-10 mt-6 mb-12"></div>
         </div>
+
+        {/* Meet your host */}
         <div className="pl-4 mt-12 mb-6">
           <div className="text-2xl font-semibold mb-6">Meet your Host</div>
           <div className="host-container rounded-2xl">
@@ -1085,6 +1090,9 @@ function Listing() {
             </div>
           </div>
         </div>
+
+        {/* /////////////////////// */}
+        {/* Things to know */}
         <div className="border border-slate-100 mx-4 mt-6 mb-12"></div>
 
         <div className="text-2xl font-semibold pl-4 mt-12 mb-6">

@@ -7,13 +7,12 @@ const PORT = 5002;
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(
-  "mongodb+srv://danielgoehring73:p1a2s3s4w5o6r7d8@cluster0.687ibiq.mongodb.net/trippioneerdatabase?retryWrites=true&w=majority&appName=Cluster0",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose
+  .connect(
+    "mongodb+srv://danielgoehring73:p1a2s3s4w5o6r7d8@cluster0.687ibiq.mongodb.net/trippioneerdatabase?retryWrites=true&w=majority&appName=Cluster0"
+  )
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.log("Connection error:", err));
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
