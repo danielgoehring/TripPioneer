@@ -1,35 +1,43 @@
+import "../index.css";
+
 function SearchBar() {
   return (
     <>
-      <div className="flex justify-center">
-        <div className="border shadow-lg py-2 pl-8 pr-2 rounded-full mt-10">
-          <div className="flex-grow flex items-center">
-            <div className="text-left px-4">
-              <label className="block text-xs font-semibold">Destination</label>
+      <div className="flex justify-center searchBar-sm dispNoneListing">
+        <div className="border shadow-lg py-2 pl-8 pr-2 rounded-full mt-10 searchBar-m ">
+          <div className="flex-grow flex items-center ">
+            <div className="text-left px-4 searchBar-pa">
+              <label className="block text-xs font-semibold searchFont">
+                Destination
+              </label>
               <input
                 placeholder="Find destinations"
                 className="placeholder:text-sm w-full"
               />
             </div>
-            <div className="border-l border-l-2 border-l-gray-100 px-4 flex items-center">
+            <div className="border-l border-l-2 border-l-gray-100 px-4 flex items-center sb-xs">
               <div className="text-left">
-                <label className="block text-xs font-semibold">Check in time</label>
+                <label className="block text-xs font-semibold">
+                  Check in time
+                </label>
                 <input
                   placeholder="Add check in dates"
                   className="placeholder:text-sm w-full"
                 />
               </div>
             </div>
-            <div className="border-l border-gray-200 px-4 flex items-center">
+            <div className="border-l border-gray-200 px-4 flex items-center sb-xs">
               <div className="text-left">
-                <label className="block text-xs font-semibold">Check out time</label>
+                <label className="block text-xs font-semibold">
+                  Check out time
+                </label>
                 <input
                   placeholder="Add check out dates"
                   className="placeholder:text-sm w-full"
                 />
               </div>
             </div>
-            <div className="border-l border-gray-200 px-4 flex items-center">
+            <div className="border-l border-gray-200 px-4 flex items-center sb-xs">
               <div className="text-left">
                 <label className="block text-xs font-semibold">Guests</label>
                 <input
