@@ -1,9 +1,20 @@
 // import { useState } from "react";
 import Logo from "../assets/TripPioneer_logo.png";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../index.css";
 
 function Header() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const resetPage = () => {
+    if (location.pathname === "/") {
+      window.location.reload();
+    } else {
+      navigate("/");
+    }
+  };
   return (
     <>
       <div className="pt-8 px-20 headerTop dispNoneListing">
@@ -11,7 +22,12 @@ function Header() {
           <div className="flex justify-between items-center">
             <div>
               <Link to="/">
-                <img src={Logo} alt="logo" className="logo" />
+                <img
+                  src={Logo}
+                  alt="logo"
+                  className="logo"
+                  onClick={resetPage}
+                />
               </Link>
             </div>
 

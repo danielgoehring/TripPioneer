@@ -5,13 +5,33 @@ import "../App.css";
 import "../index.css";
 import beachicon from "../assets/beachicon.png";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function Listing() {
+function Listing({
+  checkInDate,
+  checkOutDate,
+  guestAmount,
+  dateSync,
+  daysBetween,
+}) {
   const [images, setImages] = useState([{ url: beachicon }]);
   const [selectedImage, setSelectedImage] = useState(null);
+
   const { id } = useParams();
 
-  useEffect(() => {
+  const handleGetCheckinDays = (event) => {
+    const checkinDate = new Date(event.target.value);
+    setCheckinDays(checkinDate);
+    dateSync(event.target.value, checkOutDate);
+  };
+
+  const handleGetCheckoutDays = (event) => {
+    const checkoutDate = new Date(event.target.value);
+    setCheckoutDays(checkoutDate);
+    dateSync(checkInDate, event.target.value);
+  };
+
+  const listingTotal = useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await fetchImages();
@@ -26,13 +46,25 @@ function Listing() {
     fetchData();
   }, [id]);
 
-  const houseListings = images[0];
+  const navigate = useNavigate();
+
+  const handleReserveClick = () => {
+    navigate("/receipt", {
+      state: {
+        checkInDate,
+        checkOutDate,
+        guestAmount,
+        daysBetween,
+        selectedImage,
+      },
+    });
+  };
 
   return (
     <>
       <div className="border border-slate-100 mx-4 mt-6 dispNoneListing"></div>
       <div className="px-44 listing-sm">
-        <div className="flex justify-between px-4 mt-6">
+        <div className="flex justify-between px-4 mt-6 dispNone">
           {selectedImage ? (
             <>
               <div className="text-3xl font-semibold dispNoneListing">
@@ -83,6 +115,7 @@ function Listing() {
             </div>
           </div>
         </div>
+
         <div className="grid grid-cols-4 grid-rows-2 gap-2 p-4 pt-6 nm">
           {selectedImage ? (
             <>
@@ -162,7 +195,7 @@ function Listing() {
                     </div>
                   </div>
                 </div>
-                <div className="border border-slate-100 mx-4 mt-6 pd-right2"></div>
+                <div className="border border-slate-100 mx-4 mt-6 "></div>
 
                 <div className="flex items-center my-2 ml-3">
                   <div className=" overflow-hidden rounded-full">
@@ -185,7 +218,7 @@ function Listing() {
                     </div>
                   </div>
                 </div>
-                <div className="border border-slate-100 mx-4 mt-3.5 pd-right2"></div>
+                <div className="border border-slate-100 mx-4 mt-3.5"></div>
                 <div className="flex items-center my-4 marginr">
                   <div className="ml-1">
                     <svg
@@ -257,16 +290,16 @@ function Listing() {
                   </div>
                   <div className="border border-slate-100 mx-4 mt-6 "></div>
                 </div>
-                <div className="border border-slate-100 mx-4 mt-6 pd-right2"></div>
+                <div className="border border-slate-100 mx-4 mt-6 pd-right2 wd-change"></div>
                 <div className="">
-                  <div className="w-3/4 p-4 pr-4">
+                  <div className="w-3/4 p-4 pr-4 wd-change">
                     <p>{selectedImage.listingDes}</p>
                   </div>
                 </div>
-                <div className="pl-4 font-semibold underline mb-12">
+                <div className="pl-4 font-semibold underline mb-12 wd-change">
                   Show more
                 </div>
-                <div className="border border-slate-100 mx-4 mt-6 mb-12"></div>
+                <div className="border border-slate-100 mx-4 mt-6 mb-12 "></div>
 
                 {/* secondary images ///////////// */}
                 <div className="pl-4">
@@ -311,25 +344,27 @@ function Listing() {
                     </div> */}
                   </div>
 
-                  <div className="flex justify-start w-1/2 mt-6">
-                    <div className="w-1/2 pr-2">
+                  <div className="flex justify-start 2 mt-6">
+                    <div className="">
                       <img
                         src={selectedImage.bed1}
                         alt="Stairs"
-                        className="w-full h-52 object-cover rounded-lg"
+                        className="w-64 h-52 object-cover rounded-lg imageSized"
                       />
                       <div className="font-semibold mt-4">Bedroom 1</div>
                       <div>4 double beds</div>
                     </div>
 
-                    <div className="w-1/2 pl-2">
+                    <div className="img-2">
                       <img
                         src={selectedImage.bed2}
                         alt="Bedroom"
-                        className="w-full h-52 object-cover rounded-lg"
+                        className="w-64 h-52 object-cover rounded-lg imageSized"
                       />
-                      <div className="font-semibold mt-4">Bedroom 2</div>
-                      <div>1 queen bed</div>
+                      <div className="img-mr">
+                        <div className="font-semibold mt-4">Bedroom 2</div>
+                        <div>1 queen bed</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -513,7 +548,7 @@ function Listing() {
           {/* ////// reserve dates card */}
           {/* Right Section - Reserve Card */}
           <div className="p-4 pl-20 sticky top-4 hd-reserveCard dispNone">
-            <div className="border p-4 shadow-lg rounded-lg reserve-container dispNone">
+            <div className="border p-4 shadow-lg rounded-lg reserve-container dispReserve dispNone">
               <div className="text-2xl font-semibold mb-6 dispNone">
                 {selectedImage ? (
                   <>
@@ -530,27 +565,44 @@ function Listing() {
                     <label className="block text-xs font-semibold ">
                       CHECK-IN
                     </label>
-                    <input type="date" className=" p-1 w-full" />
+                    <input
+                      type="date"
+                      className=" p-1 w-full"
+                      value={checkInDate}
+                      onChange={(event) =>
+                        dateSync(event.target.value, checkOutDate)
+                      }
+                    />
                   </div>
                   <div className="border-l border-b p-2">
                     <label className="block text-xs font-semibold">
                       CHECKOUT
                     </label>
-                    <input type="date" className=" p-1 w-full " />
+                    <input
+                      type="date"
+                      className=" p-1 w-full "
+                      value={checkOutDate}
+                      onChange={(event) =>
+                        dateSync(checkInDate, event.target.value)
+                      }
+                    />
                   </div>
                 </div>
                 <div className="mt-4 p-2">
                   <label className="block text-xs font-semibold">GUESTS</label>
-                  <select className="py-1 w-full">
-                    <option>1 guest</option>
-                    <option>2 guests</option>
-                    <option>3 guests</option>
-                    <option>4 guests</option>
+                  <select className="py-1 w-full" value={guestAmount}>
+                    <option value="1 guest">1 guest</option>
+                    <option value="2 guests">2 guests</option>
+                    <option value="3 guests">3 guests</option>
+                    <option value="4 guests">4 guests</option>
                   </select>
                 </div>
               </div>
               <div className="mt-4">
-                <button className="bg-emerald-500 text-white py-2.5 px-4 rounded w-full font-bold mb-2">
+                <button
+                  className="bg-emerald-500 text-white py-2.5 px-4 rounded w-full font-bold mb-2"
+                  onClick={handleReserveClick}
+                >
                   Reserve
                 </button>
               </div>
@@ -562,9 +614,9 @@ function Listing() {
                   <div className="mt-4 ">
                     <div className="flex justify-between mb-2">
                       <div className="underline">
-                        ${selectedImage.price} x 5 nights
+                        ${selectedImage.price} x {daysBetween} nights
                       </div>
-                      <div>${selectedImage.initialPrice}</div>
+                      <div>${selectedImage.price * daysBetween}</div>
                     </div>
                     <div className="flex justify-between mb-2">
                       <div className="underline">Cleaning fee</div>
@@ -576,7 +628,9 @@ function Listing() {
                     </div>
                     <div className="flex justify-between font-bold border-t pt-2 mt-2 ">
                       <div className="mt-2">Total before taxes</div>
-                      <div className="mt-2">${selectedImage.totalPrice}</div>
+                      <div className="mt-2">
+                        ${selectedImage.price * daysBetween + 150 + 371}
+                      </div>
                     </div>
                   </div>
                 </>
@@ -1019,16 +1073,16 @@ function Listing() {
 
           <div className="font-semibold underline mt-4">Show more</div>
 
-          <div className="border border-slate-10 mt-6 mb-12 pd-right4"></div>
+          <div className="border border-slate-100 mt-6 mb-12 mr-4"></div>
         </div>
 
         {/* Meet your host */}
         <div className="pl-4 mt-12 mb-6">
           <div className="text-2xl font-semibold mb-6">Meet your Host</div>
-          <div className="host-container rounded-2xl">
+          <div className="host-container rounded-2xl pd-right3">
             <div className="flex flex-sm">
               <div className="">
-                <div className="bg-white shadow-xl flex items-center rounded-3xl p-6 pl-smm">
+                <div className="bg-white shadow-xl flex items-center rounded-3xl p-6 pl-smm max-w-96">
                   <div className="ml-8 mr-20 flex flex-col items-center">
                     {selectedImage ? (
                       <>
@@ -1151,13 +1205,13 @@ function Listing() {
           Things to know
         </div>
 
-        <div className="pl-4 flex justify-between pb-8">
+        <div className="pl-4 flex justify-between pb-8 changeDirection">
           <div>
             <div className="font-semibold mb-2">House rules</div>
             <div className="mb-2">Check in after 4:00 PM</div>
             <div className="mb-2">Check out before 10:00 AM</div>
             <div className="mb-4">8 guests maximum</div>
-            <div className="font-semibold underline">Show more</div>
+            <div className="font-semibold underline pb-8">Show more</div>
           </div>
 
           <div>
@@ -1165,7 +1219,7 @@ function Listing() {
             <div className="mb-2">Carbon monoxide alarm not reported</div>
             <div className="mb-2">Smoke alarm</div>
             <div className="mb-4">Must climb stairs</div>
-            <div className="mb-2 font-semibold underline">Show more</div>
+            <div className="mb-2 font-semibold underline pb-8">Show more</div>
           </div>
 
           <div>

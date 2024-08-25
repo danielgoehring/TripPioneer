@@ -9,12 +9,11 @@ import { fetchImages } from "../services/api";
 import "../App.css";
 import "../index.css";
 
-function HomePage() {
+function HomePage({ text, selectedOption }) {
   const [images, setImages] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState(text || "all");
 
   const handleCategory = (category) => {
-    // alert("working!");
     setSelectedCategory(category);
   };
 
@@ -42,10 +41,15 @@ function HomePage() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (text) {
+      setSelectedCategory(text);
+    }
+  }, [text]);
+
   return (
     <>
       <div className="border border-slate-100 mt-6 dispNone"></div>
-
       <div className="mt-6 flex justify-center items center mb-2">
         <div
           className="mx-6 border-b-2 border-transparent hover:border-slate-400 transition duration-300 iconBorder"
