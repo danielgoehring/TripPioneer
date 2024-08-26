@@ -15,11 +15,6 @@ label {
   }
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in-out forwards;
-}
-
 /* media queries  */
 
 @media (max-width: 1372px) {
@@ -252,6 +247,18 @@ label {
   /* Styles for large devices */
 
   .dispMobile {
+    display: none;
+  }
+}
+
+@media (min-width: 1372px) and (max-width: 3000px) {
+  /* Styles for large devices */
+
+  .hideMobileCard {
+    display: none;
+  }
+
+  .hideHomeLink {
     display: none;
   }
 }

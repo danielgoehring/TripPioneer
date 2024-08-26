@@ -6,19 +6,34 @@ function Receipt() {
   const { checkInDate, checkOutDate, guestAmount, daysBetween, selectedImage } =
     location.state;
 
+  console.log(checkInDate);
+  console.log(checkOutDate);
+
   // if (guestAmount > 1) {
   //   guestAmount = guestAmount.toString() + "s";
   //   guestAmount = parseInt(guestAmount.slice(0, -1), 10);
   // }
 
-  const formattedCheckInDate = new Date(checkInDate).toLocaleDateString(
-    "en-US",
-    { month: "long", day: "numeric" }
-  );
-  const formattedCheckOutDate = new Date(checkOutDate).toLocaleDateString(
-    "en-US",
-    { month: "long", day: "numeric" }
-  );
+  // const formattedCheckInDate = new Date(checkInDate).toLocaleDateString(
+  //   "en-US",
+  //   { month: "long", day: "numeric" }
+  // );
+  // const formattedCheckOutDate = new Date(checkOutDate).toLocaleDateString(
+  //   "en-US",
+  //   { month: "long", day: "numeric" }
+  // );
+
+  function formatDateString(dateString) {
+    const [year, month, day] = dateString.split("-");
+    const date = new Date(year, month - 1, day);
+    return date.toLocaleDateString("en-US", { month: "long", day: "numeric" });
+  }
+
+  const formattedCheckInDate = formatDateString(checkInDate);
+  const formattedCheckOutDate = formatDateString(checkOutDate);
+
+  console.log(formattedCheckInDate);
+  console.log(formattedCheckOutDate);
 
   const totalBeforeTaxes = selectedImage.price * daysBetween + 150 + 371;
 
@@ -31,7 +46,7 @@ function Receipt() {
         <p className="mb-4">{formattedCheckInDate}</p>
         <p className="mb-1 font-semibold italic">Check-out Date:</p>{" "}
         <p className="mb-4">{formattedCheckOutDate}</p>
-        <p className="mb-1 font-semibold italic">Guests:</p>{" "}
+        <p className="mb-1 font-semibold italic">Guests:</p>
         <p className="mb-4"> {guestAmount}</p>
         <p className="mb-1 font-semibold italic">Number of Nights:</p>{" "}
         <p> {daysBetween}</p>

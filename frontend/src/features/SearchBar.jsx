@@ -8,6 +8,7 @@ function SearchBar({
   checkInDateprop,
   checkOutDateprop,
   daysBetween,
+  today,
 }) {
   const [selectedOption, setSelectedOption] = useState("");
   const [checkin, setCheckin] = useState(checkInDateprop);
@@ -67,7 +68,7 @@ function SearchBar({
             </div>
             <div className="border-l border-l-2 border-l-gray-100 px-4 flex items-center sb-xs">
               <div className="text-left">
-                <label className="block text-xs font-semibold">
+                <label className="block text-xs font-semibold ml-1">
                   Check in time
                 </label>
                 <input
@@ -75,12 +76,13 @@ function SearchBar({
                   className="p-1 w-full text-sm text-gray-400"
                   value={checkin}
                   onChange={handleCheckinDate}
+                  min={today}
                 />
               </div>
             </div>
             <div className="border-l border-gray-200 px-4 flex items-center sb-xs">
               <div className="text-left">
-                <label className="block text-xs font-semibold">
+                <label className="block text-xs font-semibold ml-1">
                   Check out time
                 </label>
                 <input
@@ -88,17 +90,21 @@ function SearchBar({
                   className="p-1 w-full text-sm text-gray-400"
                   value={checkout}
                   onChange={handleCheckoutDate}
+                  min={today}
                 />
               </div>
             </div>
             <div className="border-l border-gray-200 px-4 flex items-center sb-xs">
               <div className="text-left">
-                <label className="block text-xs font-semibold">Guests</label>
+                <label className="block text-xs font-semibold ml-1">
+                  Guests
+                </label>
                 <select
                   className="py-1 w-full text-sm text-gray-400"
                   onChange={handleNumOfGuests}
                   value={numOfGuests}
                 >
+                  <option value="1 guest">Add guest</option>
                   <option value="1 guest">1 guest</option>
                   <option value="2 guests">2 guests</option>
                   <option value="3 guests">3 guests</option>

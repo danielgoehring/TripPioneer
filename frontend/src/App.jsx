@@ -15,6 +15,9 @@ function App() {
   const [guestAmount, setGuestAmount] = useState("");
   const [daysBetween, setDaysBetween] = useState(0);
   const ref = useRef(null);
+
+  const today = new Date().toISOString().split("T")[0];
+
   useEffect(() => {
     // Add the fade-in class when the component mounts
     if (ref.current) {
@@ -57,6 +60,7 @@ function App() {
             checkInDateprop={checkInDate}
             checkOutDateprop={checkOutDate}
             daysBetween={daysBetween}
+            today={today}
           />
           <Routes>
             <Route path="/" element={<HomePage text={displayedOption} />} />
@@ -69,6 +73,8 @@ function App() {
                   guestAmount={guestAmount}
                   dateSync={handleDateSync}
                   daysBetween={daysBetween}
+                  handleGuestAmount={handleGuestAmount}
+                  today={today}
                 />
               }
             />

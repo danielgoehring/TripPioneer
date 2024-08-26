@@ -13,11 +13,16 @@ function Listing({
   guestAmount,
   dateSync,
   daysBetween,
+  handleGuestAmount,
 }) {
   const [images, setImages] = useState([{ url: beachicon }]);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [toggleMobileCalendar, setToggleMobileCalendar] = useState(false);
 
   const { id } = useParams();
+
+  console.log(guestAmount);
+  const today = new Date().toISOString().split("T")[0];
 
   const handleGetCheckinDays = (event) => {
     const checkinDate = new Date(event.target.value);
@@ -30,6 +35,8 @@ function Listing({
     setCheckoutDays(checkoutDate);
     dateSync(checkInDate, event.target.value);
   };
+
+  const showDatesMobile = () => {};
 
   const listingTotal = useEffect(() => {
     const fetchData = async () => {
@@ -60,10 +67,31 @@ function Listing({
     });
   };
 
+  function formatDateString(dateString) {
+    const [year, month, day] = dateString.split("-");
+    const date = new Date(year, month - 1, day);
+    return date.toLocaleDateString("en-US", { month: "long", day: "numeric" });
+  }
+
+  const formattedCheckInDate = formatDateString(checkInDate);
+  const formattedCheckOutDate = formatDateString(checkOutDate);
+  // const formattedCheckInDate = new Date(checkInDate).toLocaleDateString(
+  //   "en-US",
+  //   { month: "long", day: "numeric" }
+  // );
+  // const formattedCheckOutDate = new Date(checkOutDate).toLocaleDateString(
+  //   "en-US",
+  //   { month: "long", day: "numeric" }
+  // );
+
   return (
     <>
       <div className="border border-slate-100 mx-4 mt-6 dispNoneListing"></div>
       <div className="px-44 listing-sm">
+        {/* <a href="/" class="arrow-link hideHomeLink">
+          Home
+        </a> */}
+
         <div className="flex justify-between px-4 mt-6 dispNone">
           {selectedImage ? (
             <>
@@ -115,45 +143,61 @@ function Listing({
             </div>
           </div>
         </div>
-
-        <div className="grid grid-cols-4 grid-rows-2 gap-2 p-4 pt-6 nm">
-          {selectedImage ? (
-            <>
-              <div className="col-span-2 row-span-2 ">
-                <img
-                  src={selectedImage.url}
-                  alt="1"
-                  className="w-full h-full object-cover listing-img1 nm-img"
-                />
-              </div>
-              <div className="col-span-2 row-span-1 grid grid-cols-2 gap-2 dispNone">
-                <img
-                  src={selectedImage.housepic1}
-                  alt="2"
-                  className="w-full h-full object-cover listing-img2"
-                />
-                <img
-                  src={selectedImage.housepic2}
-                  alt="3"
-                  className="w-full h-full object-cover listing-img3"
-                />
-              </div>
-              <div className="col-span-2 row-span-1 grid grid-cols-2 gap-2 dispNone">
-                <img
-                  src={selectedImage.housepic3}
-                  alt="4"
-                  className="w-full h-full object-cover listing-img4"
-                />
-                <img
-                  src={selectedImage.housepic4}
-                  alt="5"
-                  className="w-full h-full object-cover listing-img5"
-                />
-              </div>
-            </>
-          ) : (
-            <div>Image not found.</div>
-          )}
+        <div className="relative">
+          <div
+            className="absolute top-4 left-4 cursor-pointer z-10 hideHomeLink"
+            onClick={() => navigate("/")}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              fill="white"
+              class="bi bi-arrow-left-circle-fill"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+            </svg>
+          </div>
+          <div className="grid grid-cols-4 grid-rows-2 gap-2 p-4 pt-6 nm">
+            {selectedImage ? (
+              <>
+                <div className="col-span-2 row-span-2 ">
+                  <img
+                    src={selectedImage.url}
+                    alt="1"
+                    className="w-full h-full object-cover listing-img1 nm-img"
+                  />
+                </div>
+                <div className="col-span-2 row-span-1 grid grid-cols-2 gap-2 dispNone">
+                  <img
+                    src={selectedImage.housepic1}
+                    alt="2"
+                    className="w-full h-full object-cover listing-img2"
+                  />
+                  <img
+                    src={selectedImage.housepic2}
+                    alt="3"
+                    className="w-full h-full object-cover listing-img3"
+                  />
+                </div>
+                <div className="col-span-2 row-span-1 grid grid-cols-2 gap-2 dispNone">
+                  <img
+                    src={selectedImage.housepic3}
+                    alt="4"
+                    className="w-full h-full object-cover listing-img4"
+                  />
+                  <img
+                    src={selectedImage.housepic4}
+                    alt="5"
+                    className="w-full h-full object-cover listing-img5"
+                  />
+                </div>
+              </>
+            ) : (
+              <div>Image not found.</div>
+            )}
+          </div>
         </div>
 
         <div className="flex">
@@ -547,6 +591,7 @@ function Listing({
 
           {/* ////// reserve dates card */}
           {/* Right Section - Reserve Card */}
+
           <div className="p-4 pl-20 sticky top-4 hd-reserveCard dispNone">
             <div className="border p-4 shadow-lg rounded-lg reserve-container dispReserve dispNone">
               <div className="text-2xl font-semibold mb-6 dispNone">
@@ -572,11 +617,12 @@ function Listing({
                       onChange={(event) =>
                         dateSync(event.target.value, checkOutDate)
                       }
+                      min={today}
                     />
                   </div>
                   <div className="border-l border-b p-2">
                     <label className="block text-xs font-semibold">
-                      CHECKOUT
+                      CHECK-OUT
                     </label>
                     <input
                       type="date"
@@ -585,12 +631,19 @@ function Listing({
                       onChange={(event) =>
                         dateSync(checkInDate, event.target.value)
                       }
+                      min={today}
                     />
                   </div>
                 </div>
                 <div className="mt-4 p-2">
                   <label className="block text-xs font-semibold">GUESTS</label>
-                  <select className="py-1 w-full" value={guestAmount}>
+                  <select
+                    className="py-1 w-full"
+                    value={guestAmount}
+                    onChange={(event) => {
+                      handleGuestAmount(event.target.value);
+                    }}
+                  >
                     <option value="1 guest">1 guest</option>
                     <option value="2 guests">2 guests</option>
                     <option value="3 guests">3 guests</option>
@@ -640,7 +693,113 @@ function Listing({
             </div>
           </div>
         </div>
+
         {/* ////stop */}
+
+        {/* Reserve Card Mobile View */}
+
+        <div className="fixed bottom-0 left-0 w-full bg-white p-4 shadow-lg border border-t border-gray-300 hideMobileCard">
+          {toggleMobileCalendar === true ? (
+            <>
+              <div className="border rounded-lg ">
+                <div className=" justify-between mb-">
+                  <div className="border-b p-2">
+                    <label className="block text-xs font-semibold ">
+                      CHECK-IN
+                    </label>
+                    <input
+                      type="date"
+                      className=" p-1 w-full"
+                      value={checkInDate}
+                      onChange={(event) =>
+                        dateSync(event.target.value, checkOutDate)
+                      }
+                      min={today}
+                    />
+                  </div>
+                  <div className="border-l border-b p-2">
+                    <label className="block text-xs font-semibold">
+                      CHECKOUT
+                    </label>
+                    <input
+                      type="date"
+                      className=" p-1 w-full "
+                      value={checkOutDate}
+                      onChange={(event) =>
+                        dateSync(checkInDate, event.target.value)
+                      }
+                      min={today}
+                    />
+                  </div>
+                </div>
+                <div className="mt-2 p-2">
+                  <label className="block text-xs font-semibold">GUESTS</label>
+                  <select
+                    className="py-1 w-full"
+                    value={guestAmount}
+                    onChange={(event) => {
+                      handleGuestAmount(event.target.value);
+                    }}
+                  >
+                    <option value="1 guest">1 guest</option>
+                    <option value="2 guests">2 guests</option>
+                    <option value="3 guests">3 guests</option>
+                    <option value="4 guests">4 guests</option>
+                  </select>
+                </div>
+              </div>
+            </>
+          ) : null}
+
+          <div className="flex justify-between items-center max-w-screen-lg mx-auto mt-2">
+            <div className="text-xl font-semibold">
+              {selectedImage ? (
+                <>
+                  ${selectedImage.price}{" "}
+                  <span className="text-sm font-normal"> night</span>
+                </>
+              ) : (
+                <div>Image not found.</div>
+              )}
+              <div className="text-sm">
+                {formattedCheckInDate === "Invalid Date" ||
+                formattedCheckOutDate === "Invalid Date" ||
+                !formattedCheckInDate ||
+                !formattedCheckOutDate ? (
+                  <a>
+                    <div
+                      className="underline cursor-pointer"
+                      onClick={() =>
+                        setToggleMobileCalendar(!toggleMobileCalendar)
+                      }
+                    >
+                      Choose dates
+                    </div>
+                  </a>
+                ) : (
+                  <div
+                    className="cursor-pointer"
+                    onClick={() =>
+                      setToggleMobileCalendar(!toggleMobileCalendar)
+                    }
+                  >
+                    {formattedCheckInDate} - {formattedCheckOutDate}
+                    <br />
+                  </div>
+                )}
+              </div>
+            </div>
+            <div>
+              <button
+                className="bg-emerald-500 text-white py-2.5 px-6 rounded font-bold"
+                onClick={handleReserveClick}
+              >
+                Reserve
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div className="border border-slate-100 mx-4 mt-6 mb-8 hd-reserveCard"></div>
         <div className="flex items-center pl-4 hd-reserveCard">
           <div className="mr-2 mt-0.5">
