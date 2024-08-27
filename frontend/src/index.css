@@ -22,9 +22,9 @@ label {
   /* Styles for extra small devices */
 
   .searchBar-m {
-    margin-top: 12px;
+    margin-top: 24px;
     padding-left: 0px;
-    /* padding-right: 40px; */
+    padding-right: 10px;
   }
 
   .dispNoneListing {
@@ -42,7 +42,7 @@ label {
 
   .searchBar-pa {
     padding-left: 30px;
-    padding-right: 70px;
+    padding-right: 100px;
   }
 
   .searchFont {

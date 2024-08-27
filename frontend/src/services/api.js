@@ -12,6 +12,16 @@ export const fetchImages = async () => {
   }
 };
 
+// export const fetchImages = async () => {
+//   try {
+//     const response = await axios.get("http://localhost:5002/images");
+//     return response.data;
+//   } catch (error) {
+//     console.error("Error fetching images:", error);
+//     throw error;
+//   }
+// };
+
 // http://localhost:5002/images
 
 //reference

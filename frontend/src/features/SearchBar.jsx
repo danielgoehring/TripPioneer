@@ -46,7 +46,7 @@ function SearchBar({
   // };
   return (
     <>
-      <div className="flex justify-center searchBar-sm dispNoneListing">
+      <div className="flex justify-center searchBar-sm">
         <div className="border shadow-lg py-2 pl-8 pr-2 rounded-full mt-10 searchBar-m ">
           <div className="flex-grow flex items-center ">
             <div className="text-left px-4 searchBar-pa">
