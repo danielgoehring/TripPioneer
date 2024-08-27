@@ -2,7 +2,9 @@ import axios from "axios";
 
 export const fetchImages = async () => {
   try {
-    const response = await axios.get("https://trippioneer.onrender.com/images");
+    const response = await axios.get(
+      "https://trippioneer-backend.onrender.com/images"
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching images:", error);
