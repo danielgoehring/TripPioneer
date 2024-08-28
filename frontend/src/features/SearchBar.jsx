@@ -1,5 +1,6 @@
 import "../index.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function SearchBar({
   onButtonClick,
@@ -14,6 +15,19 @@ function SearchBar({
   const [checkin, setCheckin] = useState(checkInDateprop);
   const [checkout, setCheckout] = useState(checkOutDateprop);
   const [numOfGuests, setNumOfGuests] = useState("1 guest");
+  const [isListingOpen, setIsListingOpen] = useState(false);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname.startsWith("/listing")) {
+      setIsListingOpen(true);
+      console.log("true");
+    } else {
+      setIsListingOpen(false);
+      console.log("false");
+    }
+  }, [location]);
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
@@ -46,7 +60,11 @@ function SearchBar({
   // };
   return (
     <>
-      <div className="flex justify-center searchBar-sm">
+      <div
+        className={`flex justify-center searchBar-sm ${
+          isListingOpen ? "dispNoneListing" : ""
+        }`}
+      >
         <div className="border shadow-lg py-2 pl-8 pr-2 rounded-full mt-10 searchBar-m ">
           <div className="flex-grow flex items-center ">
             <div className="text-left px-4 searchBar-pa">
