@@ -20,7 +20,10 @@ function SearchBar({
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname.startsWith("/listing")) {
+    if (
+      location.pathname.startsWith("/listing") ||
+      location.pathname.startsWith("/receipt")
+    ) {
       setIsListingOpen(true);
       console.log("true");
     } else {
