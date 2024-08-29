@@ -53,6 +53,23 @@ function Listing({
     fetchData();
   }, [id]);
 
+  const [is1372, setIs1372] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIs1372(window.innerWidth >= 1374);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const navigate = useNavigate();
 
   const handleReserveClick = () => {
@@ -87,7 +104,7 @@ function Listing({
   return (
     <>
       <div className="border border-slate-100 mx-4 mt-6 dispNoneListing"></div>
-      <div className="px-44 listing-sm">
+      <div className={`px-32 listing-sm ${is1372 ? "container mx-auto" : ""}`}>
         {/* <a href="/" class="arrow-link hideHomeLink">
           Home
         </a> */}
