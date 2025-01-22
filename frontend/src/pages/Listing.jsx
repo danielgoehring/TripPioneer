@@ -218,7 +218,7 @@ function Listing({
           </div>
         </section>
 
-        <div className="flex">
+        <section className="flex">
           {selectedImage ? (
             <>
               <div>
@@ -710,13 +710,13 @@ function Listing({
               )}
             </div>
           </div>
-        </div>
+        </section>
 
         {/* ////stop */}
 
         {/* Reserve Card Mobile View */}
 
-        <div className="fixed bottom-0 left-0 w-full bg-white p-4 shadow-lg border border-t border-gray-300 hideMobileCard">
+        <section className="fixed bottom-0 left-0 w-full bg-white p-4 shadow-lg border border-t border-gray-300 hideMobileCard">
           {toggleMobileCalendar === true ? (
             <>
               <div className="border rounded-lg ">
@@ -816,7 +816,7 @@ function Listing({
               </button>
             </div>
           </div>
-        </div>
+        </section>
 
         <div className="border border-slate-100 mx-4 mt-6 mb-8 hd-reserveCard"></div>
         <div className="flex items-center pl-4 hd-reserveCard">
@@ -1254,7 +1254,7 @@ function Listing({
         </div>
 
         {/* Meet your host */}
-        <div className="pl-4 mt-12 mb-6">
+        <section className="pl-4 mt-12 mb-6">
           <div className="text-2xl font-semibold mb-6">Meet your Host</div>
           <div className="host-container rounded-2xl pd-right3">
             <div className="flex flex-sm">
@@ -1372,7 +1372,7 @@ function Listing({
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* /////////////////////// */}
         {/* Things to know */}
@@ -1382,7 +1382,7 @@ function Listing({
           Things to know
         </div>
 
-        <div className="pl-4 flex justify-between pb-8 changeDirection">
+        <section className="pl-4 flex justify-between pb-8 changeDirection">
           <div>
             <div className="font-semibold mb-2">House rules</div>
             <div className="mb-2">Check in after 4:00 PM</div>
@@ -1410,7 +1410,7 @@ function Listing({
           </div>
 
           <div></div>
-        </div>
+        </section>
       </div>
     </>
   );
