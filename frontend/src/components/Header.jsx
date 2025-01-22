@@ -17,7 +17,7 @@ function Header() {
   };
   return (
     <>
-      <div className="px-20">
+      <header className="px-20">
         <div className="container mx-auto pt-8  headerTop dispNoneListing">
           <div className="dispNone">
             <div className="flex justify-between items-center">
@@ -91,7 +91,7 @@ function Header() {
             </div>
           </div>
         </div>
-      </div>
+      </header>
     </>
   );
 }

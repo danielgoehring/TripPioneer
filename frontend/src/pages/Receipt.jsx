@@ -38,7 +38,7 @@ function Receipt() {
   const totalBeforeTaxes = selectedImage.price * daysBetween + 150 + 371;
 
   return (
-    <div className="p-4 max-w-xl mx-auto mt-20">
+    <section className="p-4 max-w-xl mx-auto mt-20">
       <h1 className="text-4xl font-semibold mb-10">Your Receipt</h1>
       <div className="mb-8">
         <h2 className="text-2xl font-semibold mb-5">Reservation Details</h2>
@@ -72,7 +72,7 @@ function Receipt() {
           <span>${totalBeforeTaxes}</span>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

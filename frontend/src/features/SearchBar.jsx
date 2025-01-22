@@ -63,7 +63,7 @@ function SearchBar({
   // };
   return (
     <>
-      <div
+      <section
         className={`flex justify-center searchBar-sm ${
           isListingOpen ? "dispNoneListing" : ""
         }`}
@@ -152,7 +152,7 @@ function SearchBar({
             </button>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

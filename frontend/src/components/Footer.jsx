@@ -5,7 +5,7 @@ function Footer() {
   return (
     <>
       <div className="border-1 border-gray-400"></div>
-      <div className="bg-gray-100 px-20 footer-container-mobile">
+      <footer className="bg-gray-100 px-20 footer-container-mobile">
         <div className="flex justify-between border-t py-4 bg-gray-100 footer-sm container mx-auto">
           <div className="flex items-center">
             <div className="text-sm ft-font">Terms</div>
@@ -84,7 +84,7 @@ function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </footer>
     </>
   );
 }
