@@ -50,7 +50,7 @@ function HomePage({ text, selectedOption }) {
   return (
     <>
       <div className="border border-slate-100 mt-6 dispNone"></div>
-      <div className="mt-6 flex justify-center items center mb-2">
+      <section className="mt-6 flex justify-center items center mb-2">
         <div
           className="mx-6 border-b-2 border-transparent hover:border-slate-400 transition duration-300 iconBorder"
           onClick={() => handleCategory("beach")}
@@ -114,10 +114,10 @@ function HomePage({ text, selectedOption }) {
             Camp sites
           </div>
         </div>
-      </div>
+      </section>
 
       <div className="border border-slate-100 mt-4 mb-2 dispMobile"></div>
-      <div className="px-20 gallery-sm">
+      <section className="px-20 gallery-sm">
         <div className="container mx-auto pt-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {filterCategories.map((image) => {
@@ -167,7 +167,7 @@ function HomePage({ text, selectedOption }) {
             })}
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

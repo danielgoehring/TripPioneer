@@ -109,7 +109,7 @@ function Listing({
           Home
         </a> */}
 
-        <div className="flex justify-between px-4 mt-6 dispNone">
+        <header className="flex justify-between px-4 mt-6 dispNone">
           {selectedImage ? (
             <>
               <div className="text-3xl font-semibold dispNoneListing">
@@ -159,8 +159,9 @@ function Listing({
               <div className="ml-1 underline dispNone">Save</div>
             </div>
           </div>
-        </div>
-        <div className="relative">
+        </header>
+
+        <section className="relative">
           <div
             className="absolute top-4 left-4 cursor-pointer z-10 hideHomeLink"
             onClick={() => navigate("/")}
@@ -215,7 +216,7 @@ function Listing({
               <div>Image not found.</div>
             )}
           </div>
-        </div>
+        </section>
 
         <div className="flex">
           {selectedImage ? (
